@@ -1,0 +1,8 @@
+[package]
+name = "getip"
+version = "0.1.0"
+authors = ["Paul Crane <paul@acheronsoft.com>"]
+
+[dependencies]
+clap = "2.32.0"
+dns-lookup = "1.0.0"
