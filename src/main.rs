@@ -22,5 +22,7 @@ fn main() {
 	let url = matches.value_of("URL").unwrap();
 	let ips: Vec<std::net::IpAddr> = lookup_host(url).unwrap();
 
-	println!("{}", ips[0]);
+	if !ips.is_empty() {
+		println!("{}", ips[0]);
+	}
 }
