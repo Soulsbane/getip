@@ -3,7 +3,7 @@ extern crate clap;
 use clap::{App, Arg};
 
 extern crate dns_lookup;
-use dns_lookup::{lookup_addr, lookup_host};
+use dns_lookup::lookup_host;
 
 fn main() {
 	let matches = App::new(crate_name!())
@@ -23,6 +23,12 @@ fn main() {
 	let ips: Vec<std::net::IpAddr> = lookup_host(url).unwrap();
 
 	if !ips.is_empty() {
-		println!("{}", ips[0]);
+		if ips.len() == 1 {
+			println!("{}", ips[0]);
+		} else {
+			for x in ips.iter() {
+				println!("{}", x);
+			}
+		}
 	}
 }
