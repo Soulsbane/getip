@@ -2,6 +2,7 @@
 name = "getip"
 version = "0.1.0"
 authors = ["Paul Crane <paul@acheronsoft.com>"]
+description = "Gets the IP Address from a domain name."
 
 [dependencies]
 clap = "2.32.0"
