@@ -22,13 +22,11 @@ fn main() {
 	let url = matches.value_of("URL").unwrap();
 	let ips: Vec<std::net::IpAddr> = lookup_host(url).unwrap();
 
-	if !ips.is_empty() {
-		if ips.len() == 1 {
-			println!("{}", ips[0]);
-		} else {
-			for x in ips.iter() {
-				println!("{}", x);
-			}
+	if !ips.is_empty() && ips.len() > 0 {
+		for x in ips.iter() {
+			println!("{}", x);
 		}
+	} else {
+		println!("{}{}", "Unable to retrieve the IP Address for ", url);
 	}
 }
