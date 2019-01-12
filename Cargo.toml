@@ -7,3 +7,4 @@ description = "Gets the IP Address from a domain name."
 [dependencies]
 clap = "2.32.0"
 dns-lookup = "1.0.0"
+human-panic = "1.0.1"

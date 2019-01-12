@@ -1,4 +1,6 @@
 #[macro_use]
+extern crate human_panic;
+#[macro_use]
 extern crate clap;
 use clap::{App, Arg};
 
@@ -6,6 +8,8 @@ extern crate dns_lookup;
 use dns_lookup::lookup_host;
 
 fn main() {
+	setup_panic!();
+
 	let matches = App::new(crate_name!())
 		.version(crate_version!())
 		.author(crate_authors!("\n"))
